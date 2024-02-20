@@ -50,7 +50,7 @@ body, html {
 
 body {
     font-family: Montserrat, "Helvetica Neue", Helvetica, sans-serif;
-    background: linear-gradient(to bottom, #ffffff, #f9f9f9, #fffff0, #f8f8ff, #faf0e6);
+    background: linear-gradient(to bottom, #f9f9f9, #fffff0, #f8f8ff, #faf0e6);
     height: 100vh;
     font-size: 13px;
 }
