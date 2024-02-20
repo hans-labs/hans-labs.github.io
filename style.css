@@ -190,13 +190,11 @@ a:active {
   font-size: 1.2em;
 }
 
-
 /* Hamburger Menu Toggler Styles */
 .toggle-menu {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  border-radius: 50%;
   display: inline-block;
   float: right;
   height: 40px;
@@ -213,7 +211,7 @@ a:active {
   background-color: #000;
   content: "";
   display: block;
-  height: 2px;
+  height: 2.08ex;
   left: calc(50% - 13px);
   position: absolute;
   top: calc(50% - 1px);
@@ -227,7 +225,7 @@ a:active {
   background-color: #000;
   content: "";
   display: block;
-  height: 2.1px;
+  height: 2px;
   position: absolute;
   transform-origin: 50% 50%;
   transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
@@ -241,39 +239,15 @@ a:active {
 .toggle-menu span:after {
   top: -7px;
 }
-	
-.toggle-menu.active { 
-   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.05);
-   background-color: black;
-}
-
-.toggle-menu::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #000;
-  border-radius: 50%;
-  width: 0; /* Initial size is 0 */
-  height: 0; /* Initial size is 0 */
-  transition: width 0.2s ease, height 0.2s ease; /* Transition size */
-}
-
-.toggle-menu.active::before {
-  width: 100%; /* Expand to full width */
-  height: 100%; /* Expand to full height */
-}
 
 .toggle-menu.active span {
   background-color: transparent;
   transition: background 0.2s ease-out;
 }
-	
+
 .toggle-menu.active span:before,
 .toggle-menu.active span:after {
-  background-color: white;
-  transition: background-color 0.2s ease-in-out;
+  transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
 }
 
 .toggle-menu.active span:before {
