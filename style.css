@@ -167,11 +167,10 @@ a:active {
   padding-top: 0;
 }
  #menu .social-links {
-  align-items: left;
   color: darkgrey;
   position: fixed;
   bottom: 2em; /* Adjust as needed for the desired distance from the bottom */
-  right: 1.6m; /* Adjust as needed for the desired distance from the right */
+  right: 1.6em; /* Adjust as needed for the desired distance from the right */
 }
 
 #menu .social-links ul {
@@ -200,13 +199,13 @@ a:active {
   border-radius: 50%;
   display: inline-block;
   float: right;
-  height: 50px;
+  height: 40px;
   outline: none;
   padding: 0;
   pointer-events: initial;
   position: relative;
   vertical-align: middle;
-  width: 50px;
+  width: 40px;
   z-index: 1110;
 }
 
