@@ -7,7 +7,7 @@ function headerContent(currentPage) {
       </h1>
        <nav class="nav">
           <button class="toggle-menu">
-            <span></span>
+            <span>MENU</span>
           </button>
        </nav>
 
