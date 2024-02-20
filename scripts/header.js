@@ -7,13 +7,13 @@ function headerContent(currentPage) {
       </h1>
        <nav class="nav">
           <button class="toggle-menu">
-            <span>MENU</span>
+            <span></span>
           </button>
        </nav>
 
 <div id="menu" class="">
        <nav class="main-nav">
-                <ul>
+            <ul>
                 <li><a
                     href="${inIndex ? "../" : ''}projects.html"
                     class="${currentPage == "projects" ? "current" : ''}">
@@ -29,11 +29,16 @@ function headerContent(currentPage) {
                     class="${currentPage == "contacts" ? "current" : ''}">
                     contacts
                 </a></li>
-                </ul>
+           </ul>
        </nav>
        <nav class="social-links">
-                 <a href="#" class="social-icon">behance</a>
-                 <a href="#" class="social-icon">YouTube</a>
+           <ul>
+               <li>
+                 <a href="#">behance</a>
+               </li>
+               <li>
+                 <a href="#">YouTube</a>
+               </li>
        </nav>
        </div>
     </header>
