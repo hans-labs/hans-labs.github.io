@@ -1,5 +1,5 @@
 const openSound = new Audio('../assets/waterdrop.mp3');
-const closeSound = new Audio('../assets/waterdrops.mp3');
+const closeSound = new Audio('../assets/waterdrop.mp3');
 const hamburger = document.querySelector('.toggle-menu')
 const menu = document.getElementById('menu');
 
