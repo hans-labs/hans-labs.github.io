@@ -62,6 +62,7 @@ a:active {
 
 #header h1 {
   margin-right: auto;
+  margin-left: 1em;
   text-decoration: none;
   z-index: 1111;
 }
@@ -74,7 +75,7 @@ a:active {
   opacity: 0;
   overflow: hidden;
   position: fixed;
-  text-align: center;
+  text-align: left;
   top: 0;
   transition: all 0.7s ease-in-out;
   visibility: hidden;
@@ -120,7 +121,6 @@ a:active {
   font-size: 2.5rem;
   font-weight: bold;
   padding: 1rem 1rem;
-  text-transform: lowercase;
   text-decoration: none !important;
   outline: none !important;
   color: inherit !important;
@@ -130,6 +130,7 @@ a:active {
   padding-top: 0;
 }
  #menu .social-links {
+  color: darkgrey;
   position: fixed;
   bottom: 2em; /* Adjust as needed for the desired distance from the bottom */
   right: 2em; /* Adjust as needed for the desired distance from the right */
@@ -143,20 +144,20 @@ a:active {
 }
 
 #menu .social-links li {
-  margin-right: 0.5em; /* Adjust as needed for the desired gap between links */
+  margin-right: 0.7em; /* Adjust as needed for the desired gap between links */
 }
 
 #menu .social-links a {
-  color: #262626;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.6em;
+  font-size: 1.2em;
 }
 
 /* Hamburger Menu Toggler Styles */
 .toggle-menu {
   background-color: transparent;
   border: none;
+  border-radius: 50%;
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   display: inline-block;
@@ -168,11 +169,12 @@ a:active {
   position: relative;
   vertical-align: middle;
   width: 50px;
-  z-index: 1110;
+  z-index: 1110;  transition: background-color 0.3s ease-in-out;
 }
 
 .toggle-menu span {
   background-color: #000;
+  border-radius: 2px; 
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
   content: "";
   display: block;
@@ -188,6 +190,7 @@ a:active {
 .toggle-menu span:before,
 .toggle-menu span:after {
   background-color: #000;
+  border-radius: 2px; 
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
   content: "";
   display: block;
@@ -209,6 +212,7 @@ a:active {
 .toggle-menu.active span {
   background-color: transparent;
   transition: background 0.2s ease-out;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .toggle-menu.active span:before,
