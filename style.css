@@ -9,6 +9,17 @@
   outline: none;
 }
 
+/* Remove default link styles */
+a, button, [role="button"], [tabindex] {
+  text-decoration: none; 
+  outline: none; 
+}
+
+/* Remove hover effect */
+a:hover, button:hover, [role="button"]:hover, [tabindex]:hover {
+  text-decoration: none;
+}
+
  body, html {
 	 margin: 0;
 	 padding: 0;
