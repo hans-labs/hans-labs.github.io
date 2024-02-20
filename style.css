@@ -50,7 +50,7 @@ a:active {
 
 /* Menu Styles */
 #menu {
-  background: #fff;
+  background: #c0c0c0;
   height: 100%;
   left: 0;
   opacity: 0;
@@ -61,7 +61,7 @@ a:active {
   transition: all 0.7s ease-in-out;
   visibility: hidden;
   width: 100%;
-  z-index: 99;
+  z-index: 1100;
 }
 
 #menu.open {
@@ -72,7 +72,6 @@ a:active {
 #menu ul {
   &:hover a {
     opacity: 0.5;
-    font-style: italic;
   }
 
   a {
@@ -87,7 +86,7 @@ a:active {
 
 #menu .main-nav {
   position: relative;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
 }
 
@@ -98,13 +97,13 @@ a:active {
 }
 
 #menu .main-nav a {
-  color: #000;
+  color: #ffffff;
   display: block;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   padding: 1rem 1rem;
   text-decoration: none;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 #menu .main-nav a:first-child {
@@ -117,13 +116,11 @@ a:active {
   left: 0;
   position: absolute;
   right: 0;
-  color: #2f2f2f;
 }
 
 #menu .social-links ul {
   display: inline-block;
   list-style: none;
-  text-align: right;
   margin: 0;
   padding: 0;
 }
@@ -134,7 +131,7 @@ a:active {
 }
 
 #menu .social-links a {
-  color: #262626;
+  color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -144,17 +141,20 @@ a:active {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  display: inline-block;
+  float: right;
   height: 50px;
   outline: none;
   padding: 0;
   pointer-events: initial;
+  position: relative;
   vertical-align: middle;
   width: 50px;
-  z-index: 10;
+  z-index: 1110;
 }
 
 .toggle-menu span {
-  background-color: #000;
+  background-color: #fff;
   content: "";
   display: block;
   height: 2px;
@@ -168,7 +168,7 @@ a:active {
 
 .toggle-menu span:before,
 .toggle-menu span:after {
-  background-color: #000;
+  background-color: #fff;
   content: "";
   display: block;
   height: 2px;
