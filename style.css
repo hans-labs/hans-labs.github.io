@@ -11,7 +11,7 @@
 	 touch-action: none;
 }
  body {
-	 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	 font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	 background: #c0c0c0;
 	 font-size: 13px;
 }
@@ -19,175 +19,160 @@
 	 padding: 2rem;
 	 color: black;
 }
-/* menu */
- #menu {
-	 background: #fff;
-	 height: 100%;
-	 left: 0;
-	 opacity: 0;
-	 overflow: hidden;
-	 position: fixed;
-	 text-align: center;
-	 top: 0;
-	 transition: all 0.7s ease-in-out;
-	 visibility: hidden;
-	 color: #424 45;
-	 width: 100%;
-	 z-index: 3;
-	/* responsiveness */
+/* Menu Styles */
+#menu {
+  background: #DE4152;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  transition: all 0.7s ease-in-out;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1100;
 }
- #menu.open {
-	 opacity: 1;
-	 visibility: visible;
+
+#menu.open {
+  opacity: 1;
+  visibility: visible;
 }
- #menu.open li:nth-child(1) {
-	 animation-delay: 0.1s;
+
+#menu ul {
+  &:hover a {
+    opacity: 0.5;
+  }
+
+  a {
+    -webkit-transform: translateZ(0);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  a:hover {
+    opacity: 1;
+  }
 }
- #menu.open li:nth-child(2) {
-	 animation-delay: 0.2s;
+
+#menu .main-nav {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
- #menu.open li:nth-child(3) {
-	 animation-delay: 0.3s;
+
+#menu .main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
- #menu.open li:nth-child(4) {
-	 animation-delay: 0.4s;
+
+#menu .main-nav a {
+  color: #ffffff;
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
 }
- #menu.open li:nth-child(5) {
-	 animation-delay: 0.5s;
+
+#menu .main-nav a:first-child {
+  padding-top: 0;
 }
- #menu.open li:nth-child(6) {
-	 animation-delay: 0.6s;
+
+#menu .social-links {
+  padding: 2rem;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
 }
- #menu.open li:nth-child(7) {
-	 animation-delay: 0.7s;
+
+#menu .social-links ul {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
- #menu.open li:nth-child(8) {
-	 animation-delay: 0.8s;
+
+#menu .social-links li {
+  display: inline;
+  margin: 0 1rem;
 }
- #menu.open li:nth-child(9) {
-	 animation-delay: 0.9s;
+
+#menu .social-links a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
 }
- #menu.open li:nth-child(10) {
-	 animation-delay: 1s;
+
+/* Hamburger Menu Toggler Styles */
+.toggle-menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  height: 50px;
+  outline: none;
+  padding: 0;
+  pointer-events: initial;
+  position: relative;
+  vertical-align: middle;
+  width: 50px;
+  z-index: 1110;
 }
- #menu.open li {
-	 animation-duration: 1s;
-	 animation-fill-mode: both;
-	 animation-name: fadeInUp;
+
+.toggle-menu span {
+  background-color: #fff;
+  content: "";
+  display: block;
+  height: 2px;
+  left: calc(50% - 13px);
+  position: absolute;
+  top: calc(50% - 1px);
+  transform-origin: 50% 50%;
+  transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+  width: 26px;
 }
- #menu ul:hover a {
-	 opacity: 0.5;
+
+.toggle-menu span:before,
+.toggle-menu span:after {
+  background-color: #fff;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  transform-origin: 50% 50%;
+  transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+  width: 26px;
 }
- #menu ul a {
-	 -webkit-transform: translateZ(0);
-	 transition: opacity 0.3s ease-in-out;
+
+.toggle-menu span:before {
+  top: 7px;
 }
- #menu ul a:hover {
-	 opacity: 1;
+
+.toggle-menu span:after {
+  top: -7px;
 }
- #menu .main-nav {
-	 position: relative;
-	 top: 50%;
-	 transform: translateY(-50%);
+
+.toggle-menu.active span {
+  background-color: transparent;
+  transition: background 0.2s ease-out;
 }
- #menu .main-nav ul {
-	 list-style: none;
-	 margin: 0;
-	 padding: 0;
+
+.toggle-menu.active span:before,
+.toggle-menu.active span:after {
+  transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
 }
- #menu .main-nav a {
-	 color: #000;
-	 display: block;
-	 font-size: 100px;
-	 font-weight: bold;
-	 padding: 1rem 1rem;
-	 text-decoration: none;
-	 text-transform: uppercase;
+
+.toggle-menu.active span:before {
+  top: 0;
+  transform: rotate3d(0, 0, 1, -45deg);
 }
- #menu .main-nav a:first {
-	 padding-top: 0;
+
+.toggle-menu.active span:after {
+  top: 0;
+  transform: rotate3d(0, 0, 1, 45deg);
 }
- #menu .current {
-	 font-style: italic;
-	 color: darkgrey;
-}
- #menu .social-links {
-	 position: absolute;
-	 bottom: 4em;
-	 right: 20px;
-	 font-size: 20px;
-	 width: auto;
-	 padding: 10px;
-	 background-color: transperant;
-	 color: white;
-	 text-transform: uppercase;
-}
- #menu .social-icon {
-	 margin: 0 10px;
-	 color: darkgrey;
-	 text-decoration: none;
-}
- #menu .toggle-menu {
-	 background-color: transparent;
-	 border: none;
-	 cursor: pointer;
-	 display: inline-block;
-	 float: right;
-	 height: 50px;
-	 outline: none;
-	 padding: 0;
-	 pointer-events: initial;
-	 position: relative;
-	 vertical-align: middle;
-	 width: 50px;
-	 z-index: 5;
-}
- #menu .toggle-menu span {
-	 background-color: #333;
-	 content: "";
-	 display: block;
-	 height: 2px;
-	 left: calc(50% - 13px);
-	 position: absolute;
-	 top: calc(50% - 1px);
-	 transform-origin: 50% 50%;
-	 transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
-	 width: 26px;
-}
- #menu .toggle-menu span:before, #menu .toggle-menu span:after {
-	 background-color: #333;
-	 content: "";
-	 display: block;
-	 height: 2px;
-	 position: absolute;
-	 transform-origin: 50% 50%;
-	 transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
-	 width: 26px;
-}
- #menu .toggle-menu span:before {
-	 top: 7px;
-}
- #menu .toggle-menu span:after {
-	 top: -7px;
-}
- #menu .toggle-menu.active span {
-	 background-color: transparent;
-	 transition: background 0.2s ease-out;
-}
- #menu .toggle-menu.active span:before, #menu .toggle-menu.active span:after {
-	 transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
-}
- #menu .toggle-menu.active span:before {
-	 top: 0;
-	 transform: rotate3d(0, 0, 1, -45deg);
-}
- #menu .toggle-menu.active span:after {
-	 top: 0;
-	 transform: rotate3d(0, 0, 1, 45deg);
-}
- @media screen and (max-width: 300px) {
-	 #menu #container header {
-		 font-size: 50px;
-	}
-}
- 
