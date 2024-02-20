@@ -105,12 +105,10 @@ a:active {
   overflow: hidden;
   position: fixed;  
   align-items: center;
-  justify-content: center;
   top: 0;
   transition: all 0.7s ease-in-out;
   visibility: hidden;
   width: 100%;
-  display: flex;
   text-transform: capitalize;
   z-index: 1100;
 }
@@ -143,6 +141,9 @@ a:active {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #menu .main-nav ul {
@@ -166,6 +167,7 @@ a:active {
   padding-top: 0;
 }
  #menu .social-links {
+  align-items: left;
   color: darkgrey;
   position: fixed;
   bottom: 2em; /* Adjust as needed for the desired distance from the bottom */
@@ -189,27 +191,27 @@ a:active {
   font-size: 1.2em;
 }
 
+
 /* Hamburger Menu Toggler Styles */
 .toggle-menu {
   background-color: transparent;
   border: none;
-  border-radius: 50%;
   cursor: pointer;
+  border-radius: 50%;
   display: inline-block;
   float: right;
-  height: 45px;
+  height: 50px;
   outline: none;
   padding: 0;
   pointer-events: initial;
   position: relative;
   vertical-align: middle;
-  width: 45px;
-  z-index: 1110;  transition: background-color 0.3s ease-in-out;
+  width: 50px;
+  z-index: 1110;
 }
 
 .toggle-menu span {
   background-color: #000;
-  border-radius: 2px; 
   content: "";
   display: block;
   height: 2px;
@@ -224,7 +226,6 @@ a:active {
 .toggle-menu span:before,
 .toggle-menu span:after {
   background-color: #000;
-  border-radius: 2px; 
   content: "";
   display: block;
   height: 2px;
@@ -247,9 +248,8 @@ a:active {
 }
 
 .toggle-menu.active span {
-  background-color: transperant;
+  background-color: transparent;
   transition: background 0.2s ease-out;
-  transition: background-color 0.2s ease-in-out;
 }
 
 .toggle-menu.active span:before,
