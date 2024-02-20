@@ -207,8 +207,6 @@ a:active {
   vertical-align: middle;
   width: 40px;
   z-index: 1110;
-  transition: background 0.2s ease-in-out in;
-  transition: background-color 0.2s ease;
 }
 
 .toggle-menu span {
@@ -245,8 +243,26 @@ a:active {
 }
 	
 .toggle-menu.active { 
-   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
+   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.05);
    background-color: black;
+}
+
+.toggle-menu::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  border-radius: 50%;
+  width: 0; /* Initial size is 0 */
+  height: 0; /* Initial size is 0 */
+  transition: width 0.2s ease, height 0.2s ease; /* Transition size */
+}
+
+.toggle-menu.active::before {
+  width: 100%; /* Expand to full width */
+  height: 100%; /* Expand to full height */
 }
 
 .toggle-menu.active span {
