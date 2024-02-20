@@ -10,9 +10,19 @@
 </head>
 
 <body>
+  
+<div class="preloader">
+	<div class="spinner"> </div>
+</div>
+  
 <header>
 </header>
   <!-- Components -->
+  <script>
+    window.addEventListener('load', function () {
+  document.querySelector('.preloader').style.display = 'none';
+});
+  </script>
   <script src="scripts/header.js"></script>
   <script>
     headerContent("Home")
