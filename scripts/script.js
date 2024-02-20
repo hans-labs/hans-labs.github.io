@@ -13,3 +13,8 @@ hamburger.addEventListener("click", ()=>{
     closeSound.play();
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Hide the preloader when the content is fully loaded
+  document.querySelector('.preloader').style.display = 'none';
+});
