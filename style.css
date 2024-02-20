@@ -15,13 +15,42 @@
 	 background: #c0c0c0;
 	 font-size: 13px;
 }
- #header {
-	 padding: 2rem;
-	 color: black;
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:active {
+  color: inherit;
+}
+
+#header {
+  padding: 2rem;
+  color: black;
+  display: flex;
+  justify-content: space-between; /* Distribute space between h1 and toggle-menu */
+  align-items: center;
+}
+
+#header h1 {
+  margin-right: auto;
+  text-decoration: none;
+	
+  z-index: 100;
+}
+
 /* Menu Styles */
 #menu {
-  background: #DE4152;
+  background: #fff;
   height: 100%;
   left: 0;
   opacity: 0;
@@ -32,7 +61,7 @@
   transition: all 0.7s ease-in-out;
   visibility: hidden;
   width: 100%;
-  z-index: 1100;
+  z-index: 99;
 }
 
 #menu.open {
@@ -43,6 +72,7 @@
 #menu ul {
   &:hover a {
     opacity: 0.5;
+    font-style: italic;
   }
 
   a {
@@ -57,7 +87,7 @@
 
 #menu .main-nav {
   position: relative;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
 }
 
@@ -68,13 +98,13 @@
 }
 
 #menu .main-nav a {
-  color: #ffffff;
+  color: #000;
   display: block;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   padding: 1rem 1rem;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 #menu .main-nav a:first-child {
@@ -87,11 +117,13 @@
   left: 0;
   position: absolute;
   right: 0;
+  color: #2f2f2f;
 }
 
 #menu .social-links ul {
   display: inline-block;
   list-style: none;
+  text-align: right;
   margin: 0;
   padding: 0;
 }
@@ -102,7 +134,7 @@
 }
 
 #menu .social-links a {
-  color: #ffffff;
+  color: #262626;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -112,20 +144,17 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  display: inline-block;
-  float: right;
   height: 50px;
   outline: none;
   padding: 0;
   pointer-events: initial;
-  position: relative;
   vertical-align: middle;
   width: 50px;
-  z-index: 1110;
+  z-index: 10;
 }
 
 .toggle-menu span {
-  background-color: #fff;
+  background-color: #000;
   content: "";
   display: block;
   height: 2px;
@@ -139,7 +168,7 @@
 
 .toggle-menu span:before,
 .toggle-menu span:after {
-  background-color: #fff;
+  background-color: #000;
   content: "";
   display: block;
   height: 2px;
