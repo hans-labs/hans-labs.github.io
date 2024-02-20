@@ -219,7 +219,7 @@ a:active {
   top: calc(50% - 1px);
   transform-origin: 50% 50%;
   transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
-  width: 24px;
+  width: 26px;
 }
 
 .toggle-menu span:before,
@@ -231,7 +231,7 @@ a:active {
   position: absolute;
   transform-origin: 50% 50%;
   transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
-  width: 24px;
+  width: 26px;
 }
 
 .toggle-menu span:before {
