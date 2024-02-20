@@ -231,7 +231,7 @@ a:active {
   position: absolute;
   transform-origin: 50% 50%;
   transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
-  width: 26px;
+  width: 27px;
 }
 
 .toggle-menu span:before {
@@ -245,6 +245,7 @@ a:active {
 .toggle-menu.active {
    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
    background-color: black;
+   transition: background-color 0.2s ease-in-out;
 }
 
 .toggle-menu.active span {
