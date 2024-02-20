@@ -13,3 +13,11 @@ hamburger.addEventListener("click", ()=>{
     closeSound.play();
   }
 });
+
+const toggle = document.querySelector("input");
+
+toggle.addEventListener("change", function () {
+  const mode = this.checked ? "light" : "dark";
+
+  document.documentElement.style.setProperty("color-scheme", mode);
+});
