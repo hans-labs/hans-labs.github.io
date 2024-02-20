@@ -118,6 +118,24 @@ a:active {
   visibility: visible;
 }
 
+#menu.open li {
+  animation-duration: 1.0s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+}
+
+#menu.open li:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+#menu.open li:nth-child(2) {
+  animation-delay: 0.23s;
+}
+
+#menu.open li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+	
 #menu ul {
 	text-align: left;
 }
