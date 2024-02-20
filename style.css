@@ -1,9 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700);
- * {
+* {
 	 margin: 0;
 	 padding: 0;
 	 box-sizing: border-box;
 }
+
+* :focus {
+  outline: none;
+}
+
  body, html {
 	 margin: 0;
 	 padding: 0;
@@ -34,7 +39,7 @@ a:active {
 }
 
 #header {
-  padding: 2rem;
+  padding: 1rem;
   color: black;
   display: flex;
   justify-content: space-between; /* Distribute space between h1 and toggle-menu */
@@ -44,13 +49,12 @@ a:active {
 #header h1 {
   margin-right: auto;
   text-decoration: none;
-	
-  z-index: 100;
+  z-index: 1111;
 }
 
 /* Menu Styles */
 #menu {
-  background: #c0c0c0;
+  background: #fff;
   height: 100%;
   left: 0;
   opacity: 0;
@@ -97,7 +101,7 @@ a:active {
 }
 
 #menu .main-nav a {
-  color: #ffffff;
+  color: #000;
   display: block;
   font-size: 2.5rem;
   font-weight: bold;
@@ -131,7 +135,7 @@ a:active {
 }
 
 #menu .social-links a {
-  color: #ffffff;
+  color: #262626;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -154,7 +158,7 @@ a:active {
 }
 
 .toggle-menu span {
-  background-color: #fff;
+  background-color: #000;
   content: "";
   display: block;
   height: 2px;
@@ -168,7 +172,7 @@ a:active {
 
 .toggle-menu span:before,
 .toggle-menu span:after {
-  background-color: #fff;
+  background-color: #000;
   content: "";
   display: block;
   height: 2px;
