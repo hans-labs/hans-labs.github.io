@@ -1,7 +1,6 @@
-const openSound = new Audio('../assets/waterdrop.mp3');
-const closeSound = new Audio('../assets/waterdrop.mp3');
-
 function headerContent(currentPage) {
+    const openSound = new Audio('../assets/waterdrop.mp3');
+    const closeSound = new Audio('../assets/waterdrop.mp3');
     const inIndex = location.href.includes("index") || location.href[location.href.length - 1] == '/';
     document.querySelector("header").innerHTML = `
     <h1>
@@ -68,12 +67,13 @@ function headerContent(currentPage) {
             closeSound.play();
         }
     });
-    darkModeSwitch.addEventListener("click", ()=>{
+     darkModeSwitch.addEventListener("click", ()=>{
         document.body.classList.toggle('dark-mode');
         if (document.body.classList.contains("dark-mode")){
             themeModeIcon.src = `${inIndex ? '' : "../"}icons/dark_mode_white_24dp.svg`;
+            darkModeSound.play()
         } else {
             themeModeIcon.src = `${inIndex ? '' : "../"}icons/light_mode_black_24dp.svg`;
+            lightModeSound.play()
         }
     })
-}
