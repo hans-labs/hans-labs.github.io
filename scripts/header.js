@@ -34,10 +34,7 @@ function headerContent(currentPage) {
        <nav class="social-links">
            <ul>
                <li>
-                 <a href="#">behance</a>
-               </li>
-               <li>
-                 <a href="#">YouTube</a>
+                 <a href="https://www.behance.net/HanELT">behance</a>
                </li>
        </nav>
        </div>
