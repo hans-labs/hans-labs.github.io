@@ -106,11 +106,11 @@ body {
 	text-align: left;
 }
 
-.current {
+#menu .current {
   font-style: italic;
   text-decoration: underline;
   filter: brightness(125%);
-	
+}	
 	
 #menu ul { 
   a {
