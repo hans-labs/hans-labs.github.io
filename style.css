@@ -1,0 +1,399 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700);
+@import url(https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap);
+
+/* CSS for the preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: cyan;
+  /* Set background color as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  /* Set a high z-index to ensure it's above other elements */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* :focus {
+  text-decoration: none !important;
+  outline: none !important;
+  color: inherit !important;
+
+}
+
+a,
+button,
+[role="button"],
+[tabindex] {
+  text-decoration: none !important;
+  outline: none !important;
+  color: inherit !important;
+}
+
+a:hover,
+button:hover,
+[role="button"]:hover,
+[tabindex]:hover {
+  text-decoration: none !important;
+  outline: none !important;
+  color: inherit !important;
+}
+
+a:visited {
+  text-decoration: none !important;
+  outline: none !important;
+  color: inherit !important;
+}
+
+a:active {
+  text-decoration: none !important;
+  outline: none !important;
+  color: inherit !important;
+}
+
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  touch-action: none;
+  user-select: none;
+}
+
+body {
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  background: linear-gradient(to bottom, #f9f9f9, #fffff0, #f8f8ff, #faf0e6);
+  height: 100vh;
+  font-size: 13px;
+}
+
+
+header {
+  padding: 0.36rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  /* Distribute space between h1 and toggle-menu */
+  align-items: center;
+}
+
+header h1 {
+  position: fixed;
+  top: 0.5em;
+  left: 0.5em;
+  text-decoration: none;
+  display: inline-block;
+  z-index: 2;
+}
+
+/* Menu Styles */
+#menu {
+  background: #fff;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  width: 100%;
+  text-transform: capitalize;
+  z-index: 1;
+}
+
+#menu ul {
+  text-align: left;
+}
+
+#menu .current {
+  font-style: italic;
+  font-family: "Bodoni Moda", serif;
+  font-weight: 700;
+  color: #c0c0c0
+}
+
+#menu ul {
+  a {
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  a:hover {
+    opacity: 1;
+  }
+}
+
+#menu .main-nav {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#menu .main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu .main-nav a {
+  color: #000;
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 1rem 1rem;
+  text-decoration: none;
+  outline: none !important;
+  color: inherit !important;
+}
+
+#menu .main-nav a:first-child {
+  padding-top: 0;
+}
+
+
+#menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+#menu.open li {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+}
+
+#menu.open li:nth-child(1) {
+  animation-delay: 0.10s;
+}
+
+#menu.open li:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+#menu.open li:nth-child(3) {
+  animation-delay: 0.20s;
+}
+
+#menu.open li:nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+#menu .social-links {
+  color: #333;
+  position: fixed;
+  font-stretch: condensed;
+  bottom: 2em;
+  /* Adjust as needed for the desired distance from the bottom */
+  right: 1.6em;
+  /* Adjust as needed for the desired distance from the right */
+}
+
+
+#menu.open .social-links li {
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+  animation-name: fadeInLeft;
+}
+
+#menu.open .social-links li:nth-child(1) {
+  animation-delay: 0.11s;
+}
+
+#menu.open .social-links li:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+#menu.open .social-links li:nth-child(3) {
+  animation-delay: 0.21s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#menu .social-links ul {
+  display: flex;
+  /* Use flexbox for alignment */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu .social-links li {
+  margin-right: 0.7em;
+  /* Adjust as needed for the desired gap between links */
+}
+
+#menu .social-links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+/* Hamburger Menu Toggler Styles */
+.toggle-menu {
+  position: fixed;
+  top: 0.5em;
+  right: 0.5em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  outline: none;
+  padding: 0;
+  pointer-events: initial;
+  vertical-align: middle;
+  width: 40px;
+  z-index: 2;
+}
+
+.toggle-menu span {
+  background-color: #000;
+  content: "";
+  display: block;
+  height: 2px;
+  left: calc(50% - 13px);
+  position: absolute;
+  top: calc(50% - 1px);
+  transform-origin: 50% 50%;
+  transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+  width: 26px;
+}
+
+.toggle-menu span:before,
+.toggle-menu span:after {
+  background-color: #000;
+  content: "";
+  display: block;
+  height: 2.09px;
+  position: absolute;
+  transform-origin: 50% 50%;
+  transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+  width: 26px;
+}
+
+.toggle-menu span:before {
+  top: 7px;
+}
+
+.toggle-menu span:after {
+  top: -7px;
+}
+
+.toggle-menu.active span {
+  background-color: transparent;
+  transition: background 0.2s ease-out;
+}
+
+.toggle-menu.active span:before,
+.toggle-menu.active span:after {
+  transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+}
+
+.toggle-menu.active span:before {
+  top: 0;
+  transform: rotate3d(0, 0, 1, -45deg);
+}
+
+.toggle-menu.active span:after {
+  top: 0;
+  transform: rotate3d(0, 0, 1, 45deg);
+}
+
+#dark-mode-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 2em;
+  left: 1em;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+#dark-mode-switch img {
+  width: 24px;
+  height: 24px;
+}
+
+/*
+** DARK MODE
+*/
+
+.dark-mode #dark-mode-switch {
+  border-color: white;
+  background-color: black;
+}
+
+.dark-mode .toggle-menu:not(.active) span,
+.dark-mode .toggle-menu span:before,
+.dark-mode .toggle-menu span:after {
+  background-color: white;
+}
+
+.dark-mode #menu .social-links {
+  color: #ddd;
+}
+
+.dark-mode #menu .main-nav a,
+.dark-mode #menu .main-nav li {
+  color: white;
+}
+
+.dark-mode #menu {
+  background: black;
+}
+
+.dark-mode #menu .current {
+  color: #3f3f3f;
+}
+.dark-mode header h1 {
+  color: white;
+}
+
+body.dark-mode {
+  background: black;
+}
