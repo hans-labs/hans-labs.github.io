@@ -14,20 +14,25 @@ function headerContent(currentPage) {
 <div id="menu" class="">
        <nav class="main-nav">
             <ul>
+                 <li><a
+                    href="${inIndex ? "" : ''}index.html"
+                    class="${currentPage == "index" ? "current" : ''}">
+                    index
+                </a></li>
                 <li><a
-                    href="${inIndex ? "../" : ''}projects.html"
+                    href="${inIndex ? "" : ''}projects.html"
                     class="${currentPage == "projects" ? "current" : ''}">
                     projects
                 </a></li>
                 <li><a
-                    href="${inIndex ? "../" : ''}services.html"
+                    href="${inIndex ? "" : ''}services.html"
                     class="${currentPage == "services" ? "current" : ''}">
                     services
                 </a></li>
                 <li><a
-                    href="${inIndex ? "../" : ''}contacts.html"
+                    href="${inIndex ? "" : ''}contacts.html"
                     class="${currentPage == "contacts" ? "current" : ''}">
-                    contacts
+                    contact
                 </a></li>
            </ul>
        </nav>
@@ -41,4 +46,3 @@ function headerContent(currentPage) {
     </header>
         `;
 }
-
