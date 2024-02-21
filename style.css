@@ -8,74 +8,90 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #fff; /* Set background color as needed */
+  background-color: cyan;
+  /* Set background color as needed */
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 99;
+  /* Set a high z-index to ensure it's above other elements */
 }
-
 
 
 * {
-	 margin: 0;
-	 padding: 0;
-	 box-sizing: border-box;
-        -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a, button, [role="button"], [tabindex] {
+* :focus {
+  text-decoration: none !important;
+  outline: none !important;
+  color: inherit !important;
+
+}
+
+a,
+button,
+[role="button"],
+[tabindex] {
   text-decoration: none !important;
   outline: none !important;
   color: inherit !important;
 }
 
-a:hover, button:hover, [role="button"]:hover, [tabindex]:hover {
+a:hover,
+button:hover,
+[role="button"]:hover,
+[tabindex]:hover {
   text-decoration: none !important;
   outline: none !important;
   color: inherit !important;
 }
 
-input, textarea, button, select,
-a {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+a:visited {
+  text-decoration: none !important;
+  outline: none !important;
+  color: inherit !important;
 }
 
-a:focus,a:visited,a:active{
-  text-decoration: none;
-  outline: none;
-  color: inherit;
+a:active {
+  text-decoration: none !important;
+  outline: none !important;
+  color: inherit !important;
 }
 
 
-
-body, html {
-	 margin: 0;
-	 padding: 0;
-	 overscroll-behavior: none;
-	 touch-action: none;
-	 user-select: none;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  touch-action: none;
+  user-select: none;
 }
 
 body {
-    font-family: Montserrat, "Helvetica Neue", sans-serif;
-    background: linear-gradient(to bottom, #f9f9f9, #fffff0, #f8f8ff, #faf0e6);
-    height: 100vh;
-    font-size: 13px;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  background: linear-gradient(to bottom, #f9f9f9, #fffff0, #f8f8ff, #faf0e6);
+  height: 100vh;
+  font-size: 13px;
 }
 
 
-#header {
+header {
   padding: 0.36rem;
   color: black;
   display: flex;
-  justify-content: space-between; /* Distribute space between h1 and toggle-menu */
+  justify-content: space-between;
+  /* Distribute space between h1 and toggle-menu */
   align-items: center;
 }
 
-#header h1 {
-  margin-right: auto;
-  margin-left: 0.3em;
+header h1 {
+  position: fixed;
+  top: 0.5em;
+  left: 0.5em;
   text-decoration: none;
   display: inline-block;
   z-index: 2;
@@ -88,7 +104,7 @@ body {
   left: 0;
   opacity: 0;
   overflow: hidden;
-  position: fixed;  
+  position: fixed;
   align-items: center;
   top: 0;
   transition: all 0.5s ease-in-out;
@@ -99,7 +115,7 @@ body {
 }
 
 #menu ul {
-	text-align: left;
+  text-align: left;
 }
 
 #menu .current {
@@ -107,11 +123,10 @@ body {
   font-family: "Bodoni Moda", serif;
   font-weight: 700;
   color: #c0c0c0
-}	
-	
-#menu ul { 
+}
+
+#menu ul {
   a {
-    -webkit-transform: translateZ(0);
     opacity: 0.7;
     transition: opacity 0.3s ease-in-out;
   }
@@ -143,6 +158,8 @@ body {
   font-weight: 700;
   padding: 1rem 1rem;
   text-decoration: none;
+  outline: none !important;
+  color: inherit !important;
 }
 
 #menu .main-nav a:first-child {
@@ -182,6 +199,7 @@ body {
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -191,12 +209,14 @@ body {
 
 
 
- #menu .social-links {
-  color: #333333;
+#menu .social-links {
+  color: #333;
   position: fixed;
   font-stretch: condensed;
-  bottom: 2em; /* Adjust as needed for the desired distance from the bottom */
-  right: 1.6em; /* Adjust as needed for the desired distance from the right */
+  bottom: 2em;
+  /* Adjust as needed for the desired distance from the bottom */
+  right: 1.6em;
+  /* Adjust as needed for the desired distance from the right */
 }
 
 
@@ -223,6 +243,7 @@ body {
     opacity: 0;
     transform: translateX(20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -230,14 +251,16 @@ body {
 }
 
 #menu .social-links ul {
-  display: flex; /* Use flexbox for alignment */
+  display: flex;
+  /* Use flexbox for alignment */
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 #menu .social-links li {
-  margin-right: 0.8em; /* Adjust as needed for the desired gap between links */
+  margin-right: 0.7em;
+  /* Adjust as needed for the desired gap between links */
 }
 
 #menu .social-links a {
@@ -247,20 +270,27 @@ body {
 }
 
 /* Hamburger Menu Toggler Styles */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min-content;
+  position: fixed;
+  top: 0.5em;
+  right: 0.5em;
+  z-index: 2;
+}
 .toggle-menu {
   background-color: transparent;
   border: none;
   cursor: pointer;
   display: inline-block;
-  float: right;
   height: 40px;
   outline: none;
   padding: 0;
   pointer-events: initial;
-  position: relative;
   vertical-align: middle;
   width: 40px;
-  z-index: 1110;
 }
 
 .toggle-menu span {
@@ -316,18 +346,19 @@ body {
   transform: rotate3d(0, 0, 1, 45deg);
 }
 
-
 #dark-mode-switch {
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   bottom: 2em;
-  left: 0.8em;
-  width: 36px;
-  height: 36px;
+  left: 1em;
+  width: 40px;
+  height: 40px;
   outline: none;
   background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
 }
 #dark-mode-switch img {
   width: 24px;
@@ -339,6 +370,7 @@ body {
 */
 
 .dark-mode #dark-mode-switch {
+  border-color: white;
   background-color: black;
 }
 
@@ -371,4 +403,3 @@ body {
 body.dark-mode {
   background: black;
 }
-
