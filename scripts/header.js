@@ -1,9 +1,7 @@
 function headerContent(currentPage) {
-    const inIndex = location.href.includes("index") || location.href[location.href.length - 1] == '/';
-    const urlPrefix = inIndex ? '' : " ../";
     document.querySelector("header").innerHTML = `
     <h1>
-        <a href="${urlPrefix}index.html">
+        <a href="index.html">
             Han's Labs
         </a>
     </h1>
@@ -17,22 +15,22 @@ function headerContent(currentPage) {
         <nav class="main-nav">
             <ul>
                 <li>
-                    <a href="${inIndex ? "" : ''}index.html" class="${currentPage == "index" ? "current" : ''}">
+                    <a href="index.html" class="${currentPage == "index" ? "current" : ''}">
                         index
                     </a>
                 </li>
                 <li>
-                    <a href="${inIndex ? "" : ''}projects.html" class="${currentPage == "projects" ? "current" : ''}">
+                    <a href="projects.html" class="${currentPage == "projects" ? "current" : ''}">
                         projects
                     </a>
                 </li>
                 <li>
-                    <a href="${inIndex ? "" : ''}services.html" class="${currentPage == "services" ? "current" : ''}">
+                    <a href="services.html" class="${currentPage == "services" ? "current" : ''}">
                         services
                     </a>
                 </li>
                 <li>
-                    <a href="${inIndex ? "" : ''}contacts.html" class="${currentPage == "contacts" ? "current" : ''}">
+                    <a href="contacts.html" class="${currentPage == "contacts" ? "current" : ''}">
                         contact
                     </a>
                 </li>
@@ -46,16 +44,16 @@ function headerContent(currentPage) {
             </ul>
         </nav>
         <button id="dark-mode-switch">
-            <img src="${urlPrefix}icons/light_mode_black_24dp.svg">
+            <img src="icons/light_mode_black_24dp.svg">
         </button>
     </div>`;
 
     // After rendering the content of the header
     // Sounds
-    const openSound = new Audio(`${urlPrefix}assets/waterdrop.mp3`);
-    const closeSound = new Audio(`${urlPrefix}assets/waterdrop.mp3`);
-    const darkSwitchSound = new Audio(`${urlPrefix}assets/cricket.mp3`);
-    const lightSwitchSound = new Audio(`${urlPrefix}assets/tweet.mp3`);
+    const openSound = new Audio(`assets/waterdrop.mp3`);
+    const closeSound = new Audio(`assets/waterdrop.mp3`);
+    const darkSwitchSound = new Audio(`assets/cricket.mp3`);
+    const lightSwitchSound = new Audio(`assets/tweet.mp3`);
     // DOM
     const hamburger = document.querySelector('.toggle-menu')
     const menu = document.getElementById('menu');
@@ -72,19 +70,19 @@ function headerContent(currentPage) {
             closeSound.play();
         }
     });
-    darkModeSwitch.addEventListener("click", ()=>{
+    darkModeSwitch.addEventListener("click", () => {
         document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains("dark-mode")){
-            themeModeIcon.src = `${urlPrefix}icons/dark_mode_white_24dp.svg`;
+        if (document.body.classList.contains("dark-mode")) {
+            themeModeIcon.src = `icons/dark_mode_white_24dp.svg`;
             darkSwitchSound.play()
             sessionStorage.setItem("usingDarkMode", 'y')
         } else {
-            themeModeIcon.src = `${urlPrefix}icons/light_mode_black_24dp.svg`;
+            themeModeIcon.src = `icons/light_mode_black_24dp.svg`;
             lightSwitchSound.play()
             sessionStorage.setItem("usingDarkMode", '')
         }
     })
-    if (sessionStorage.getItem("usingDarkMode") != null){
+    if (sessionStorage.getItem("usingDarkMode") != null) {
         if (sessionStorage.getItem("usingDarkMode") == 'y') darkModeSwitch.click()
     } else if (new Date().getHours() < 6 || new Date().getHours() > 18) darkModeSwitch.click()
     // dark mode when the hour is in the range 6 PM -> 6 AM
