@@ -79,7 +79,7 @@ body {
 
 #header h1 {
   margin-right: auto;
-  margin-left: 0.36em;
+  margin-left: 0.3em;
   text-decoration: none;
   display: inline-block;
   z-index: 1111;
@@ -106,12 +106,12 @@ body {
 	text-align: left;
 }
 
-#menu ul:current {
+.current {
   font-style: italic;
-  text-decoration: underline; 
-  filter: brightness(125%); 
-}
-
+  text-decoration: underline;
+  filter: brightness(125%);
+	
+	
 #menu ul { 
   a {
     -webkit-transform: translateZ(0);
@@ -272,7 +272,7 @@ body {
   background-color: #000;
   content: "";
   display: block;
-  height: 2.08px;
+  height: 2px;
   left: calc(50% - 13px);
   position: absolute;
   top: calc(50% - 1px);
@@ -286,7 +286,7 @@ body {
   background-color: #000;
   content: "";
   display: block;
-  height: 2px;
+  height: 2.09px;
   position: absolute;
   transform-origin: 50% 50%;
   transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
