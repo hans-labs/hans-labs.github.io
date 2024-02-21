@@ -1,8 +1,4 @@
 function headerContent(currentPage) {
-    const openSound = new Audio('../assets/waterdrop.mp3');
-    const closeSound = new Audio('../assets/waterdrop.mp3');
-    const darkSwitchSound = new Audio('../assets/cricket.mp3');
-    const lightSwitchSound = new Audio('../assets/tweet.mp3');
     const inIndex = location.href.includes("index") || location.href[location.href.length - 1] == '/';
     document.querySelector("header").innerHTML = `
     <h1>
@@ -54,6 +50,12 @@ function headerContent(currentPage) {
     </div>`;
 
     // After rendering the content of the header
+    // Sounds
+    const openSound = new Audio('../assets/waterdrop.mp3');
+    const closeSound = new Audio('../assets/waterdrop.mp3');
+    const darkSwitchSound = new Audio('../assets/cricket.mp3');
+    const lightSwitchSound = new Audio('../assets/tweet.mp3');
+    // DOM
     const hamburger = document.querySelector('.toggle-menu')
     const menu = document.getElementById('menu');
     const darkModeSwitch = document.getElementById("dark-mode-switch");
@@ -83,6 +85,5 @@ function headerContent(currentPage) {
     })
     if (sessionStorage.getItem("usingDarkMode") != null){
         if (sessionStorage.getItem("usingDarkMode") == 'y') darkModeSwitch.click()
-    }
-    if (new Date().getHours() >= 12) darkModeSwitch.click()
+    } else if (new Date().getHours() >= 12) darkModeSwitch.click()
 }
