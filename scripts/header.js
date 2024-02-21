@@ -69,9 +69,9 @@ function headerContent(currentPage) {
             closeSound.play();
         }
     });
-    darkModeSwitch.addEventListener("click", ()=>{
+    darkModeSwitch.addEventListener("click", () => {
         document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains("dark-mode")){
+        if (document.body.classList.contains("dark-mode")) {
             themeModeIcon.src = `${inIndex ? '' : "../"}icons/dark_mode_white_24dp.svg`;
             darkSwitchSound.play()
             sessionStorage.setItem("usingDarkMode", 'y')
@@ -81,8 +81,7 @@ function headerContent(currentPage) {
             sessionStorage.setItem("usingDarkMode", '')
         }
     })
-    if (sessionStorage.getItem("usingDarkMode") != null){
+    if (sessionStorage.getItem("usingDarkMode") != null) {
         if (sessionStorage.getItem("usingDarkMode") == 'y') darkModeSwitch.click()
-    }
-    if (new Date().getHours() >= 12) darkModeSwitch.click()
+    } else if (new Date().getHours() >= 12) darkModeSwitch.click()
 }

@@ -17,18 +17,19 @@
   <header>
   </header>
 
+  <!-- Preloader -->
+  <script>
+    window.addEventListener('load', function () {
+      document.querySelector('.preloader').style.display = 'none';
+    });
+  </script>
   <!-- Components -->
   <script src="scripts/header.js"></script>
   <script>
-    // Preloader
-    window.addEventListener('load', function () {
-      document.querySelector('.preloader').style.display = 'none';
-
-      headerContent("index")
-    });
+    headerContent("index")
   </script>
-
   <!-- Scripts -->
+
 </body>
 
 </html>

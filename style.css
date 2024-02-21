@@ -270,10 +270,17 @@ header h1 {
 }
 
 /* Hamburger Menu Toggler Styles */
-.toggle-menu {
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min-content;
   position: fixed;
   top: 0.5em;
   right: 0.5em;
+  z-index: 2;
+}
+.toggle-menu {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -284,7 +291,6 @@ header h1 {
   pointer-events: initial;
   vertical-align: middle;
   width: 40px;
-  z-index: 2;
 }
 
 .toggle-menu span {
@@ -345,8 +351,8 @@ header h1 {
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: 2em;
-  left: 1em;
+  top: 0.5em;
+  right: 5em;
   width: 40px;
   height: 40px;
   outline: none;
