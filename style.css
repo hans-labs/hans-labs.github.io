@@ -12,21 +12,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Set a high z-index to ensure it's above other elements */
+  z-index: 1000;
 }
+
 
 
 * {
 	 margin: 0;
 	 padding: 0;
 	 box-sizing: border-box;
-}
-
-* :focus {  
-  text-decoration: none !important;
-  outline: none !important;
-  color: inherit !important;
-
+        -webkit-tap-highlight-color: transparent;
 }
 
 a, button, [role="button"], [tabindex] {
@@ -41,17 +36,17 @@ a:hover, button:hover, [role="button"]:hover, [tabindex]:hover {
   color: inherit !important;
 }
 
-a:visited {
-  text-decoration: none !important;
-  outline: none !important;
-  color: inherit !important;
+input, textarea, button, select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-a:active {
-  text-decoration: none !important;
-  outline: none !important;
-  color: inherit !important;
+a:focus,a:visited,a:active{
+  text-decoration: none;
+  outline: none;
+  color: inherit;
 }
+
 
 
 body, html {
@@ -148,8 +143,6 @@ body {
   font-weight: 700;
   padding: 1rem 1rem;
   text-decoration: none;
-  outline: none !important;
-  color: inherit !important;
 }
 
 #menu .main-nav a:first-child {
@@ -244,7 +237,7 @@ body {
 }
 
 #menu .social-links li {
-  margin-right: 0.7em; /* Adjust as needed for the desired gap between links */
+  margin-right: 0.8em; /* Adjust as needed for the desired gap between links */
 }
 
 #menu .social-links a {
