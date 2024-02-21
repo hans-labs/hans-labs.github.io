@@ -16,7 +16,7 @@ function headerContent(currentPage) {
             <ul>
                  <li><a
                     href="${inIndex ? "" : ''}index.html"
-                    class="${currentPage == "home" ? "current" : ''}">
+                    class="${currentPage == "index" ? "current" : ''}">
                     index
                 </a></li>
                 <li><a
