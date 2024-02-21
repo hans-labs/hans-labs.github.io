@@ -110,9 +110,8 @@ body {
 #menu .current {
   font-style: italic;
   font-family: "Bodoni Moda", serif;
-  font-weight: 500;
-  text-decoration: underline !important;
-  color: c0c0c0
+  font-weight: 700;
+  color: #c0c0c0
 }	
 	
 #menu ul { 
@@ -146,9 +145,9 @@ body {
   color: #000;
   display: block;
   font-size: 2.5rem;
-  font-weight: 500;
+  font-weight: 700;
   padding: 1rem 1rem;
-  text-decoration: none !important;
+  text-decoration: none;
   outline: none !important;
   color: inherit !important;
 }
