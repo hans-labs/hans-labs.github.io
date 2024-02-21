@@ -28,6 +28,8 @@
   100% { transform: rotate(360deg); }
 }
 
+
+
 * {
 	 margin: 0;
 	 padding: 0;
@@ -41,28 +43,12 @@
 
 }
 
-body, html {
-	 margin: 0;
-	 padding: 0;
-	 overscroll-behavior: none;
-	 touch-action: none;
-}
-
-body {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, sans-serif;
-    background: linear-gradient(to bottom, #f9f9f9, #fffff0, #f8f8ff, #faf0e6);
-    height: 100vh;
-    font-size: 13px;
-}
-
-/* Remove default link styles */
 a, button, [role="button"], [tabindex] {
   text-decoration: none !important;
   outline: none !important;
   color: inherit !important;
 }
 
-/* Remove hover effect */
 a:hover, button:hover, [role="button"]:hover, [tabindex]:hover {
   text-decoration: none !important;
   outline: none !important;
@@ -81,6 +67,23 @@ a:active {
   color: inherit !important;
 }
 
+
+body, html {
+	 margin: 0;
+	 padding: 0;
+	 overscroll-behavior: none;
+	 touch-action: none;
+	 user-select: none;
+}
+
+body {
+    font-family: Montserrat, "Helvetica Neue", Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #f9f9f9, #fffff0, #f8f8ff, #faf0e6);
+    height: 100vh;
+    font-size: 13px;
+}
+
+
 #header {
   padding: 0.36rem;
   color: black;
@@ -93,6 +96,7 @@ a:active {
   margin-right: auto;
   margin-left: 0.36em;
   text-decoration: none;
+  display: inline-block;
   z-index: 1111;
 }
 
@@ -200,6 +204,7 @@ a:active {
  #menu .social-links {
   color: #333333;
   position: fixed;
+  font-stretch: condensed;
   bottom: 2em; /* Adjust as needed for the desired distance from the bottom */
   right: 1.6em; /* Adjust as needed for the desired distance from the right */
 }
