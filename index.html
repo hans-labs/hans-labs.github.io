@@ -10,25 +10,25 @@
 </head>
 
 <body>
-  
-<div class="preloader">
-</div>
-  
-<header>
-</header>
-	
-  <!-- Preloader -->
-  <script>
-    window.addEventListener('load', function () {
-  document.querySelector('.preloader').style.display = 'none';
-});
-  </script>
+
+  <div class="preloader">
+  </div>
+
+  <header>
+  </header>
+
   <!-- Components -->
   <script src="scripts/header.js"></script>
   <script>
-    headerContent("index")
+    // Preloader
+    window.addEventListener('load', function () {
+      document.querySelector('.preloader').style.display = 'none';
+
+      headerContent("index")
+    });
   </script>
+
   <!-- Scripts -->
-  <script src="scripts/script.js"></script>
 </body>
+
 </html>
