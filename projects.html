@@ -130,7 +130,7 @@
     <!-- Components -->
     <script src="scripts/header.js"></script>
     <script>
-        headerContent("index")
+        headerContent("projects")
     </script>
     <!-- Scripts -->
     <script>
@@ -218,6 +218,7 @@
         }
         function updateScreenshot() {
             mainDiv.style.backgroundImage = `url("showcase/${projectNames[curProject]}/${curScreenshot}.${projects[projectNames[curProject]].shottype}")`;
+            console.log(mainDiv.style.backgroundImage);
         }
     </script>
 
