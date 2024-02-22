@@ -15,7 +15,7 @@ function headerContent(currentPage) {
     <div id="menu" class="">
        
         <button id="dark-mode-switch">
-            <img src="assets/dark_icon.svg">
+            <img src="assets/dark_icon.png">
         </button>
         
         <nav class="main-nav">
@@ -70,11 +70,11 @@ function headerContent(currentPage) {
     darkModeSwitch.addEventListener("click", () => {
         document.body.classList.toggle('dark-mode');
         if (document.body.classList.contains("dark-mode")) {
-            themeModeIcon.src = 'assets/light_icon.svg`;
+            themeModeIcon.src = 'assets/light_icon.png`;
             darkSwitchSound.play()
             sessionStorage.setItem("usingDarkMode", 'y')
         } else {
-            themeModeIcon.src = `assets/dark_icon.svg`;
+            themeModeIcon.src = `assets/dark_icon.png`;
             lightSwitchSound.play()
             sessionStorage.setItem("usingDarkMode", '')
         }
