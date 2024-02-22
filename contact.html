@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Han's Labs</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            max-width: 50em;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        h2 {
+            border-bottom: 1px solid black;
+        }
+        .dark-mode h2 {
+            color: lightyellow;
+            border-bottom-color: lightyellow;
+        }
+
+        #lets-talk h2 {
+            color: red;
+            border-color: red;
+        }
+
+        #lets-talk,
+        #hiring {
+            flex-grow: 1;
+        }
+
+        #lets-talk,
+        #offers,
+        #hiring {
+            padding: 0 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #lets-talk img {
+            width: 24px;
+            height: 24px;
+        }
+
+        #lets-talk a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1em;
+            border: 1px solid red;
+            border-radius: 50%;
+            background-color: lightyellow;
+        }
+        #lets-talk a:hover {
+            box-shadow: 0 0 0 4px red;
+        }
+
+        #lets-talk div {
+            margin-top: 0.5em;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        #offers div {
+            display: flex;
+            overflow: hidden;
+        }
+
+        #offers div span {
+            margin: 0.25em;
+            padding: 0.25em;
+            border: 1px solid black;
+            border-radius: 8px;
+            min-width: fit-content;
+        }
+        .dark-mode #offers span {
+            color: lightyellow;
+            border-color: lightyellow;
+        }
+
+        #offers div span:first-child {
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            box-shadow: 0 0 0 2px black;
+            animation: popDark 0.5s linear;
+        }
+
+        @keyframes popDark {
+            0% {
+                color: lightyellow;
+            }
+
+            100% {
+                color: black;
+            }
+        }
+
+        .dark-mode #offers span:first-child {
+            box-shadow: 0 0 0 2px lightyellow;
+            animation: popLight 0.5s linear;
+        }
+
+        @keyframes popLight {
+            0% {
+                color: black;
+            }
+
+            100% {
+                color: lightyellow;
+            }
+        }
+
+        #hiring h2 {
+            font-weight: normal;
+        }
+
+        #hiring ul {
+            padding-left: 2em;
+        }
+
+        #hiring ul li {
+            margin: 1em 0;
+        }
+        .dark-mode #hiring ul li {
+            color: lightyellow;
+        }
+
+        #hiring ul li a:hover {
+            box-shadow: 0 4px 0 0 black;
+        }
+        .dark-mode #hiring ul li a:hover {
+            box-shadow: 0 4px 0 0 lightyellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preloader">
+    </div>
+
+    <header>
+    </header>
+
+
+    <main>
+        <div id="lets-talk">
+            <h2>Let's Talk</h2>
+            <div>
+                <a href="#">
+                    <img src="icons/gmail.png">
+                </a>
+                <a href="#">
+                    <img src="icons/linkedin.png">
+                </a>
+                <a href="#">
+                    <img src="icons/telegram.png">
+                </a>
+            </div>
+        </div>
+        <div id="offers">
+            <h2>We Offer:</h2>
+            <div>
+            </div>
+        </div>
+        <div id="hiring">
+            <h2>We Are Hiring!</h2>
+            <ul>
+                <li>
+                    <a href="#">About us</a>
+                </li>
+                <li>
+                    <a href="#">Workflow</a>
+                </li>
+                <li>
+                    <a href="#">Hiring process</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Preloader -->
+    <script>
+        window.addEventListener('load', function () {
+            document.querySelector('.preloader').style.display = 'none';
+        });
+    </script>
+    <!-- Components -->
+    <script src="scripts/header.js"></script>
+    <script>
+        headerContent("contact")
+    </script>
+    <!-- Scripts -->
+    <script>
+        const services = [
+            "Custom Website Creation",
+            "Responsive Web Design",
+            "E-commerce Website Development",
+
+            "Custom Software Solutions",
+            "Mobile App Development (iOS, Android)",
+            "Enterprise Software Development",
+
+            "User Interface (UI) Design",
+            "User Experience (UX) Design",
+            "Graphic Design (Logo, Branding)",
+
+            "Online Store Development",
+            "Shopping Cart Implementation",
+            "Payment Gateway Integration",
+
+            "Native and Hybrid App Development",
+            "App Testing and Optimization",
+
+            "Cloud Infrastructure Setup",
+            "Cloud Migration Services",
+
+            "Website and App Security Audits",
+            "SSL Implementation",
+            "Data Encryption",
+            "Cybersecurity ",
+
+            "Search Engine Optimization (SEO)",
+            "Social Media Marketing",
+            "Content Marketing",
+
+            "Implementation of Analytics Tools",
+            "Data Analysis and Reporting",
+
+            "Ongoing Maintenance Services",
+            "Bug Fixes and Updates",
+            "Technical Support",
+
+            "Technology Consulting",
+            "Project Management",
+            "System Integration",
+
+            "Test Planning and Execution",
+            "Automated Testing",
+            "Performance Testing"
+        ];
+        function shuffleServices() {
+            let shuflled = [...services];
+            const size = services.length;
+            for (let k = 0; k < size * 2; k++) {
+                const i = Math.floor(Math.random() * size);
+                const j = Math.floor(Math.random() * size);
+                const t = shuflled[i];
+                shuflled[i] = shuflled[j]
+                shuflled[j] = t;
+            }
+            return shuflled;
+        }
+        let servicesToWrite = shuffleServices();
+        const maxServices = 3; // Maximum number of services to show
+        const offersContainer = document.querySelector("#offers div");
+        for (let j = 0; j < maxServices; j++) {
+            offersContainer.innerHTML += `<span>${servicesToWrite[0]}</span>`;
+            servicesToWrite = servicesToWrite.filter((v, i) => i != 0);
+        }
+        setInterval(() => {
+            if (offersContainer.childElementCount >= maxServices) {
+                offersContainer.removeChild(offersContainer.children[0])
+            }
+            offersContainer.innerHTML += `<span>${servicesToWrite[0]}</span>`;
+            servicesToWrite = servicesToWrite.filter((v, i) => i != 0);
+            if (servicesToWrite.length == 0) servicesToWrite = shuffleServices();
+        }, 2000)
+    </script>
+
+</body>
+
+</html>

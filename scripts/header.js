@@ -30,7 +30,7 @@ function headerContent(currentPage) {
                     </a>
                 </li>
                 <li>
-                    <a href="contacts.html" class="${currentPage == "contacts" ? "current" : ''}">
+                    <a href="contact.html" class="${currentPage == "contact" ? "current" : ''}">
                         contact
                     </a>
                 </li>
@@ -50,10 +50,10 @@ function headerContent(currentPage) {
 
     // After rendering the content of the header
     // Sounds
-    const openSound = new Audio(`assets/waterdrop.mp3`);
-    const closeSound = new Audio(`assets/waterdrop.mp3`);
-    const darkSwitchSound = new Audio(`assets/cricket.mp3`);
-    const lightSwitchSound = new Audio(`assets/tweet.mp3`);
+    const openSound = new Audio(`audio/waterdrop.mp3`);
+    const closeSound = new Audio(`audio/waterdrop.mp3`);
+    const darkSwitchSound = new Audio(`audio/cricket.mp3`);
+    const lightSwitchSound = new Audio(`audio/tweet.mp3`);
     // DOM
     const hamburger = document.querySelector('.toggle-menu')
     const menu = document.getElementById('menu');

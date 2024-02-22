@@ -73,14 +73,13 @@ html {
 
 body {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
-  background: linear-gradient(to bottom, #f9f9f9, #fffff0, #f8f8ff, #faf0e6);
+  background-color: lightyellow;
   height: 100vh;
   font-size: 13px;
 }
 
 
 header {
-  padding: 0.36rem;
   color: black;
   display: flex;
   justify-content: space-between;
@@ -99,7 +98,7 @@ header h1 {
 
 /* Menu Styles */
 #menu {
-  background: #fff;
+  background: lightyellow;
   height: 100%;
   left: 0;
   opacity: 0;
@@ -356,7 +355,7 @@ header h1 {
   width: 40px;
   height: 40px;
   outline: none;
-  background-color: white;
+  background-color: lightyellow;
   border: 1px solid black;
   border-radius: 50%;
 }
@@ -370,14 +369,14 @@ header h1 {
 */
 
 .dark-mode #dark-mode-switch {
-  border-color: white;
+  border-color: lightyellow;
   background-color: black;
 }
 
 .dark-mode .toggle-menu:not(.active) span,
 .dark-mode .toggle-menu span:before,
 .dark-mode .toggle-menu span:after {
-  background-color: white;
+  background-color: lightyellow;
 }
 
 .dark-mode #menu .social-links {
@@ -386,7 +385,7 @@ header h1 {
 
 .dark-mode #menu .main-nav a,
 .dark-mode #menu .main-nav li {
-  color: white;
+  color: lightyellow;
 }
 
 .dark-mode #menu {
@@ -397,9 +396,9 @@ header h1 {
   color: #3f3f3f;
 }
 .dark-mode header h1 {
-  color: white;
+  color: lightyellow;
 }
 
 body.dark-mode {
-  background: black;
+  background-color: black;
 }
