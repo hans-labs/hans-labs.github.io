@@ -16,7 +16,7 @@
       height: 100vh;
       overflow: hidden;
       clip: rect(auto, auto, auto, auto);
-      background-color: white;
+      background-color: lightyellow;
     }
 
     .dark-mode #primary,
@@ -47,29 +47,61 @@
       animation: stackup 2s forwards;
     }
 
-    @keyframes stackup {
-      from {
-        top: 100vh;
-      }
-
-      to {
-        top: 0;
-      }
+    #primary.slidingup .bgimg {
+      animation: slightslide 1.5s forwards;
     }
+
+    #primary.slidingup h3 {
+      animation: slightslide 2s forwards;
+    }
+
+    #primary.slidingup p {
+      animation: Pslightslide 2s forwards;
+    }
+
+    #secondary.slidingup .bgimg {
+      animation: reslightslide 1.5s forwards;
+    }
+
+    #secondary.slidingup h3 {
+      animation: reslightslide 2s forwards;
+    }
+
+    #secondary.slidingup p {
+      animation: rePslightslide 2s forwards;
+    }
+
+    /* Sliding DOWN */
     #primary.slidingdown {
       top: -100vh;
-      animation: stackdown 2s forwards;
+      animation: stackdown 1.5s forwards;
     }
 
-    @keyframes stackdown {
-      from {
-        top: -100vh;
-      }
-
-      to {
-        top: 0;
-      }
+    #primary.slidingdown .bgimg {
+      animation: slightslide 1.5s forwards;
     }
+
+    #primary.slidingdown h3 {
+      animation: slightslide 2s forwards;
+    }
+
+    #primary.slidingdown p {
+      animation: Pslightslide 2s forwards;
+    }
+
+    #secondary.slidingdown .bgimg {
+      animation: reslightslide 1.5s forwards;
+    }
+
+    #secondary.slidingdown h3 {
+      animation: reslightslide 2s forwards;
+    }
+
+    #secondary.slidingdown p {
+      animation: rePslightslide 2s forwards;
+    }
+
+
 
     h3 {
       width: 100%;
@@ -80,6 +112,7 @@
       padding-top: 1em;
       border-top: 1px solid black;
     }
+
     .dark-mode h3 {
       border-top-color: lightyellow;
       color: lightyellow;
@@ -91,8 +124,70 @@
       left: 50%;
       transform: translate(-50%, -100%);
     }
+
     .dark-mode p {
       color: lightyellow;
+    }
+
+    @keyframes stackup {
+      from {
+        top: 100vh;
+      }
+
+      to {
+        top: 0;
+      }
+    }
+
+
+    @keyframes stackdown {
+      from {
+        top: -100vh;
+      }
+
+      to {
+        top: 0;
+      }
+    }
+
+    @keyframes slightslide {
+      from {
+        transform: translateY(8em);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes Pslightslide {
+      from {
+        bottom: 4em;
+      }
+
+      to {
+        bottom: 8em;
+      }
+    }
+
+    @keyframes reslightslide {
+      from {
+        transform: 0;
+      }
+
+      to {
+        transform: translateY(4em);
+      }
+    }
+
+    @keyframes rePslightslide {
+      from {
+        bottom: 8em;
+      }
+
+      to {
+        bottom: 4em;
+      }
     }
   </style>
 </head>
@@ -172,10 +267,23 @@
 
     // Event listeners
     primaryDiv.addEventListener("click", (event) => {
-      if (event.target.id != 'primary' && event.target.parentElement.id != "primary") return
       if (primaryDiv.classList.contains("slidingup") || primaryDiv.classList.contains("slidingdown")) return
       nextservice(event)
     })
+    var scrolled = 0;
+    window.addEventListener("scroll", () => {
+      console.log("scrollign");
+      if (primaryDiv.classList.contains("slidingup") || primaryDiv.classList.contains("slidingdown")) return
+      let clickEvent = { clientX: window.innerWidth };
+      const newScrollY = scrolled + window.scrollY;
+      if (newScrollY < scrolled) {
+        // scrolled up
+        clickEvent.clientX = 0;
+      }
+      scrolled = newScrollY;
+      nextservice(clickEvent)
+    })
+
     nextservice()
 
     // Functions
@@ -198,14 +306,18 @@
       pDesc.textContent = services[curservice].desc;
       if (clickedRight) {
         primaryDiv.classList.add("slidingup")
+        secondaryDiv.classList.add("slidingup");
         setTimeout(() => {
           primaryDiv.classList.remove("slidingup");
-        }, 2000)
+          secondaryDiv.classList.remove("slidingup");
+        }, 1500)
       } else {
         primaryDiv.classList.add("slidingdown")
+        secondaryDiv.classList.add("slidingdown")
         setTimeout(() => {
           primaryDiv.classList.remove("slidingdown");
-        }, 2000)
+          secondaryDiv.classList.remove("slidingdown");
+        }, 1500)
       }
     }
   </script>
