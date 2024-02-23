@@ -7,6 +7,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Han's Labs</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    #primary,
+    #secondary {
+      position: fixed;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      clip: rect(auto, auto, auto, auto);
+      background-color: white;
+    }
+
+    .dark-mode #primary,
+    .dark-mode #secondary {
+      background-color: black;
+    }
+
+    #secondary {
+      z-index: -1;
+    }
+
+    .bgimg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      max-width: 100vw;
+      max-height: 100vh;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      background-size: contain;
+    }
+
+    #primary.slidingup {
+      top: 100vh;
+      animation: stackup 2s forwards;
+    }
+
+    @keyframes stackup {
+      from {
+        top: 100vh;
+      }
+
+      to {
+        top: 0;
+      }
+    }
+    #primary.slidingdown {
+      top: -100vh;
+      animation: stackdown 2s forwards;
+    }
+
+    @keyframes stackdown {
+      from {
+        top: -100vh;
+      }
+
+      to {
+        top: 0;
+      }
+    }
+
+    h3 {
+      width: 100%;
+      position: fixed;
+      bottom: 3em;
+      left: 0;
+      text-align: center;
+      padding-top: 1em;
+      border-top: 1px solid black;
+    }
+    .dark-mode h3 {
+      border-top-color: lightyellow;
+      color: lightyellow;
+    }
+
+    p {
+      position: fixed;
+      bottom: 8em;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+    .dark-mode p {
+      color: lightyellow;
+    }
+  </style>
 </head>
 
 <body>
@@ -16,6 +104,18 @@
 
   <header>
   </header>
+
+  <div id="primary">
+    <div class="bgimg"></div>
+    <p class="desc"></p>
+    <h3></h3>
+  </div>
+
+  <div id="secondary">
+    <div class="bgimg"></div>
+    <p class="desc"></p>
+    <h3></h3>
+  </div>
 
   <!-- Preloader -->
   <script>
@@ -29,6 +129,86 @@
     headerContent("services")
   </script>
   <!-- Scripts -->
+  <script>
+    const services = [
+      {
+        title: "Web Design",
+        desc: "Description.",
+        bgimg: "batman.jfif",
+        types: [1, 2, 3]
+      },
+      {
+        title: "AI",
+        desc: "Desc",
+        bgimg: "ramadan.jfif",
+        types: [1, 2, 3, 4]
+      },
+      {
+        title: "Mobile App",
+        desc: "Desc",
+        bgimg: "taichi.jfif",
+        types: [1, 2]
+      },
+      {
+        title: "UI Design",
+        desc: "Desc",
+        bgimg: "shower cat.jfif",
+        types: [1, 2]
+      }
+    ]
+
+    let curservice = 0;
+
+    // DOM
+    const primaryDiv = document.getElementById("primary");
+    const pBGImg = primaryDiv.querySelector(".bgimg");
+    const pTitle = primaryDiv.querySelector("h3");
+    const pDesc = primaryDiv.querySelector(".desc");
+
+    const secondaryDiv = document.getElementById("secondary");
+    const sBGImg = secondaryDiv.querySelector(".bgimg");
+    const sTitle = secondaryDiv.querySelector("h3");
+    const sDesc = secondaryDiv.querySelector(".desc");
+
+    // Event listeners
+    primaryDiv.addEventListener("click", (event) => {
+      if (event.target.id != 'primary' && event.target.parentElement.id != "primary") return
+      if (primaryDiv.classList.contains("slidingup") || primaryDiv.classList.contains("slidingdown")) return
+      nextservice(event)
+    })
+    nextservice()
+
+    // Functions
+    function nextservice(event = { clientX: 0 }) {
+      sBGImg.style.backgroundImage = pBGImg.style.backgroundImage;
+      sTitle.textContent = pTitle.textContent;
+      sDesc.textContent = pDesc.textContent;
+
+      const clickedRight = event.clientX > window.innerWidth / 2;
+      if (clickedRight) {
+        // clicked on the right side
+        curservice++;
+      } else {
+        curservice += services.length - 1;
+      }
+      curservice %= services.length;
+
+      pBGImg.style.backgroundImage = `url("services/${services[curservice].bgimg}")`;
+      pTitle.textContent = services[curservice].title;
+      pDesc.textContent = services[curservice].desc;
+      if (clickedRight) {
+        primaryDiv.classList.add("slidingup")
+        setTimeout(() => {
+          primaryDiv.classList.remove("slidingup");
+        }, 2000)
+      } else {
+        primaryDiv.classList.add("slidingdown")
+        setTimeout(() => {
+          primaryDiv.classList.remove("slidingdown");
+        }, 2000)
+      }
+    }
+  </script>
 
 </body>
 
