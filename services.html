@@ -12,8 +12,10 @@
     #secondary {
       position: fixed;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      min-width: 100vw;
+      max-width: 100vw;
+      min-height: 100vh;
+      max-height: 100vh;
       overflow: hidden;
       clip: rect(auto, auto, auto, auto);
       background-color: lightyellow;
@@ -41,6 +43,7 @@
       background-attachment: fixed;
       background-size: cover;
     }
+
     h3 {
       width: 16em;
       text-align: center;
@@ -51,6 +54,7 @@
       padding-top: 1em;
       border-top: 1px solid black;
     }
+
     p {
       position: fixed;
       bottom: 8em;
@@ -118,14 +122,14 @@
 
 
 
-    
+
 
     .dark-mode h3 {
       border-top-color: lightyellow;
       color: lightyellow;
     }
 
-    
+
 
     .dark-mode p {
       color: lightyellow;
@@ -161,6 +165,7 @@
         transform: 0;
       }
     }
+
     @keyframes reslightslideup {
       from {
         transform: 0;
@@ -170,6 +175,7 @@
         transform: translateY(-4em);
       }
     }
+
     @keyframes slightslidedown {
       from {
         transform: translateY(-8em);
@@ -179,6 +185,7 @@
         transform: 0;
       }
     }
+
     @keyframes reslightslidedown {
       from {
         transform: 0;
@@ -199,6 +206,7 @@
         bottom: 8em;
       }
     }
+
     @keyframes H3slightslide {
       from {
         top: 12em;
@@ -218,6 +226,7 @@
         bottom: 4em;
       }
     }
+
     @keyframes reH3slightslide {
       from {
         bottom: 8em;
@@ -227,7 +236,6 @@
         bottom: 4em;
       }
     }
-
   </style>
 </head>
 
