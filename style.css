@@ -154,8 +154,6 @@ body {
 }
 
 #menu .current {
-        font-style: italic;
-        font-family: "Bodoni Moda", serif;
         font-weight: 700;
 	padding-bottom: 0;
 }
