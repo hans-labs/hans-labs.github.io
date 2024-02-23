@@ -155,7 +155,8 @@ body {
 
 #menu .current {
         font-weight: 700;
-	padding-bottom: 0;
+        font-style: italic;
+        font-family: "Bodoni Moda", serif;
 }
 
 #menu .main-nav {
@@ -177,7 +178,7 @@ body {
         color: #000;
         font-size: 2.5rem;
         font-weight: 700;
-        padding-bottom: 0;
+        padding: 2em 0 0;
         text-decoration: none;
 }
 
@@ -219,7 +220,7 @@ body {
 }
 
 #menu .social-links {
-        color: #333333;
+        color: #333;
         position: fixed;
         font-stretch: condensed;
         bottom: 2em; /* Adjust as needed for the desired distance from the bottom */
