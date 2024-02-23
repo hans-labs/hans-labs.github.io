@@ -119,15 +119,8 @@ body {
 
 #menu ul {
 	text-align: left;
-	padding-bottom: 0.5;
+	padding-bottom: 0;
 }
-
-#menu .current {
-  font-style: italic;
-  font-family: "Bodoni Moda", serif;
-  font-weight: 700;
-  color: #c0c0c0
-}	
 	
 #menu ul { 
   a {
@@ -138,9 +131,15 @@ body {
 
   a:hover {
     opacity: 1; 
-	  
   }
 }
+
+#menu .current {
+  font-style: italic;
+  font-family: "Bodoni Moda", serif;
+  font-weight: 700;
+  color: #c0c0c0;
+}	
 
 #menu .main-nav {
   position: relative;
