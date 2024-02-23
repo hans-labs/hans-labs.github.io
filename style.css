@@ -156,6 +156,7 @@ body {
 #menu .current {
         font-weight: 700;
         font-style: italic;
+        font-family: "Bodoni Moda", serif;
 }
 
 #menu .main-nav {
@@ -173,7 +174,7 @@ body {
 }
 
 #menu .main-nav li {
-	padding: 1rem;
+	padding: 0.6rem;
 }
 
 #menu .main-nav a {
