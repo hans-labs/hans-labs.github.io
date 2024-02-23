@@ -119,8 +119,7 @@ body {
 
 #menu ul {
 	text-align: left;
-	padding-bottom: 0;
-	padding-top: 1;
+	padding-bottom: 0.5;
 }
 
 #menu .current {
@@ -133,9 +132,8 @@ body {
 #menu ul { 
   a {
     -webkit-transform: translateZ(0);
-    opacity: 0.8;
+    opacity: 0.6;
     transition: opacity 0.3s ease-in-out;
-    line-height: 0; 
   }
 
   a:hover {
