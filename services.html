@@ -11,6 +11,7 @@
     #primary,
     #secondary {
       position: fixed;
+      top: 0;
       left: 0;
       min-width: 100vw;
       max-width: 100vw;
@@ -21,10 +22,7 @@
       background-color: lightyellow;
     }
 
-    .dark-mode #primary,
-    .dark-mode #secondary {
-      background-color: black;
-    }
+
 
     #secondary {
       z-index: -1;
@@ -123,14 +121,14 @@
 
 
 
-
+    .dark-mode #primary,
+    .dark-mode #secondary {
+      background-color: black;
+    }
     .dark-mode h3 {
       border-top-color: lightyellow;
       color: lightyellow;
     }
-
-
-
     .dark-mode p {
       color: lightyellow;
     }
@@ -141,7 +139,7 @@
       }
 
       to {
-        top: -2.25em;
+        top: -2em;
       }
     }
 
@@ -152,7 +150,7 @@
       }
 
       to {
-        top: 2.25em;
+        top: 2em;
       }
     }
 
@@ -162,13 +160,13 @@
       }
 
       to {
-        transform: 0;
+        transform: translateY(0);
       }
     }
 
     @keyframes reslightslideup {
       from {
-        transform: 0;
+        transform: translateY(0);
       }
 
       to {
@@ -182,13 +180,13 @@
       }
 
       to {
-        transform: 0;
+        transform: translateY(0);
       }
     }
 
     @keyframes reslightslidedown {
       from {
-        transform: 0;
+        transform: translateY(0);
       }
 
       to {
