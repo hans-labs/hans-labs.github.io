@@ -32,27 +32,25 @@
       position: fixed;
       top: 0;
       left: 0;
-      min-width: 100vw;
-      min-height: 100vh;
-      max-width: 100vw;
-      max-height: 100vh;
+      width: 100vw;
+      height: 100vh;
       background-repeat: no-repeat;
       background-position: center;
       background-attachment: fixed;
-      background-size: contain;
+      background-size: cover;
     }
 
+    /* Sliding UP */
     #primary.slidingup {
-      top: 100vh;
       animation: stackup 2s forwards;
     }
 
     #primary.slidingup .bgimg {
-      animation: slightslide 1.5s forwards;
+      animation: slightslideup 1.5s forwards;
     }
 
     #primary.slidingup h3 {
-      animation: slightslide 2s forwards;
+      animation: H3slightslide 2s forwards;
     }
 
     #primary.slidingup p {
@@ -60,11 +58,11 @@
     }
 
     #secondary.slidingup .bgimg {
-      animation: reslightslide 1.5s forwards;
+      animation: reslightslideup 1.5s forwards;
     }
 
     #secondary.slidingup h3 {
-      animation: reslightslide 2s forwards;
+      animation: reH3slightslide 2s forwards;
     }
 
     #secondary.slidingup p {
@@ -73,16 +71,15 @@
 
     /* Sliding DOWN */
     #primary.slidingdown {
-      top: -100vh;
-      animation: stackdown 1.5s forwards;
+      animation: stackdown 2s forwards;
     }
 
     #primary.slidingdown .bgimg {
-      animation: slightslide 1.5s forwards;
+      animation: slightslidedown 1.5s forwards;
     }
 
     #primary.slidingdown h3 {
-      animation: slightslide 2s forwards;
+      animation: H3slightslide 2s forwards;
     }
 
     #primary.slidingdown p {
@@ -90,11 +87,11 @@
     }
 
     #secondary.slidingdown .bgimg {
-      animation: reslightslide 1.5s forwards;
+      animation: reslightslidedown 1.5s forwards;
     }
 
     #secondary.slidingdown h3 {
-      animation: reslightslide 2s forwards;
+      animation: reH3slightslide 2s forwards;
     }
 
     #secondary.slidingdown p {
@@ -104,11 +101,12 @@
 
 
     h3 {
-      width: 100%;
-      position: fixed;
-      bottom: 3em;
-      left: 0;
+      width: 16em;
       text-align: center;
+      position: fixed;
+      top: 8em;
+      left: 50%;
+      transform: translate(-50%, 0);
       padding-top: 1em;
       border-top: 1px solid black;
     }
@@ -135,7 +133,7 @@
       }
 
       to {
-        top: 0;
+        top: -2.25em;
       }
     }
 
@@ -146,19 +144,47 @@
       }
 
       to {
-        top: 0;
+        top: 2.25em;
       }
     }
 
-    @keyframes slightslide {
+    @keyframes slightslideup {
       from {
         transform: translateY(8em);
       }
 
       to {
-        transform: translateY(0);
+        transform: 0;
       }
     }
+    @keyframes reslightslideup {
+      from {
+        transform: 0;
+      }
+
+      to {
+        transform: translateY(-4em);
+      }
+    }
+    @keyframes slightslidedown {
+      from {
+        transform: translateY(-8em);
+      }
+
+      to {
+        transform: 0;
+      }
+    }
+    @keyframes reslightslidedown {
+      from {
+        transform: 0;
+      }
+
+      to {
+        transform: translateY(4em);
+      }
+    }
+
 
     @keyframes Pslightslide {
       from {
@@ -169,14 +195,13 @@
         bottom: 8em;
       }
     }
-
-    @keyframes reslightslide {
+    @keyframes H3slightslide {
       from {
-        transform: 0;
+        top: 12em;
       }
 
       to {
-        transform: translateY(4em);
+        bottom: 8em;
       }
     }
 
@@ -189,6 +214,16 @@
         bottom: 4em;
       }
     }
+    @keyframes reH3slightslide {
+      from {
+        bottom: 8em;
+      }
+
+      to {
+        bottom: 4em;
+      }
+    }
+
   </style>
 </head>
 
@@ -229,25 +264,25 @@
       {
         title: "Web Design",
         desc: "Description.",
-        bgimg: "batman.jfif",
+        bgimg: "servers.jpg",
         types: [1, 2, 3]
       },
       {
         title: "AI",
         desc: "Desc",
-        bgimg: "ramadan.jfif",
+        bgimg: "howl.jpg",
         types: [1, 2, 3, 4]
       },
       {
         title: "Mobile App",
         desc: "Desc",
-        bgimg: "taichi.jfif",
+        bgimg: "stars.jpg",
         types: [1, 2]
       },
       {
         title: "UI Design",
         desc: "Desc",
-        bgimg: "shower cat.jfif",
+        bgimg: "street.jpg",
         types: [1, 2]
       }
     ]
