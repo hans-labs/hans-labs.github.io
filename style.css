@@ -135,7 +135,7 @@ body {
     -webkit-transform: translateZ(0);
     opacity: 0.8;
     transition: opacity 0.3s ease-in-out;
-    line-height: 1;
+    line-height: 0; 
   }
 
   a:hover {
