@@ -30,7 +30,7 @@ a span:first-child {
         text-transform: uppercase;
 }
 
-a span::before {
+a::before {
         content: "";
         position: absolute;
         width: 0;
@@ -44,7 +44,7 @@ a span::before {
         /* Set the transition duration and easing */
 }
 
-a:hover span.active::before {
+a:hover::before {
         width: 100%;
 }
 
@@ -64,7 +64,7 @@ button,
         color: inherit !important;
 }
 
-a:hover span.active,
+a:hover,
 button:hover,
 [role="button"]:hover,
 [tabindex]:hover {
