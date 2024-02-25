@@ -59,6 +59,7 @@ function headerContent(currentPage) {
 
     // disabling visiting a new page to implement navigaiton link switch animation
     const letterInterval = 40 // ms
+    const jumpAnimationDur = 400 // ms
     document.querySelectorAll(".main-nav a").forEach(anchor => {
         anchor.onclick = (event) => {
             event.preventDefault();
@@ -72,10 +73,10 @@ function headerContent(currentPage) {
                     span.className = "current";
                 }, i*letterInterval)
             })
-            
+
             setTimeout(()=>{
                 location.href = anchor.href;
-            }, letterInterval*anchor.querySelectorAll("span").length)
+            }, letterInterval*anchor.querySelectorAll("span").length+jumpAnimationDur)
         }
     })
 }

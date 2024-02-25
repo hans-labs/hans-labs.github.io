@@ -25,6 +25,20 @@ a {
 
 a span {
         text-transform: lowercase;
+        display: block;
+        margin: 0 0.1em;
+}
+a span:first-child {
+        margin-left: 0;
+}
+a span:last-child {
+        margin-right: 0;
+}
+.main-nav a {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        margin-right: auto;
 }
 a span:first-child {
         text-transform: uppercase;
@@ -40,7 +54,7 @@ a::before {
         left: 0;
         background-color: #000;
         /* Set the underline color */
-        transition: width 0.3s ease;
+        transition: width 0.4s ease;
         /* Set the transition duration and easing */
 }
 
@@ -165,9 +179,18 @@ body {
 }
 
 #menu span.current {
-        font-weight: 700;
         font-style: italic;
-        font-family: "Bodoni Moda", serif;
+        font-family: "Bodoni Moda", sans-serif;
+        animation: jump 0.4s linear;
+}
+@keyframes jump {
+        from {
+                transform: translateY(-0.75em);
+        }
+        to {
+                transform: 0;
+        }
+        
 }
 
 #menu .main-nav {
@@ -186,6 +209,7 @@ body {
 
 #menu .main-nav li {
         padding: 0.6rem;
+        height: 6.25em;
 }
 
 #menu .main-nav a {
