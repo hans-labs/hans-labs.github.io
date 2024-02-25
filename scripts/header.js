@@ -1,9 +1,8 @@
 function headerContent(currentPage) {
-    const inIndex = location.href.includes("index") || location.href[location.href.length - 1] == '/';
     document.querySelector("header").innerHTML = `
     <header id="header">
       <h1>
-      <a href="${inIndex ? '' : "../"}index.html">Han's Labs</a>
+      <a href="index.html">Han's Labs</a>
       </h1>
        <nav class="nav">
           <button class="toggle-menu">
@@ -15,22 +14,22 @@ function headerContent(currentPage) {
        <nav class="main-nav">
             <ul>
                  <li><a
-                    href="${inIndex ? "" : ''}index.html"
+                    href="index.html"
                     class="${currentPage == "index" ? "current" : ''}">
                     index
                 </a></li>
                 <li><a
-                    href="${inIndex ? "" : ''}projects.html"
+                    href="projects.html"
                     class="${currentPage == "projects" ? "current" : ''}">
                     projects
                 </a></li>
                 <li><a
-                    href="${inIndex ? "" : ''}services.html"
+                    href="services.html"
                     class="${currentPage == "services" ? "current" : ''}">
                     services
                 </a></li>
                 <li><a
-                    href="${inIndex ? "" : ''}contacts.html"
+                    href="contacts.html"
                     class="${currentPage == "contacts" ? "current" : ''}">
                     contact
                 </a></li>
@@ -43,6 +42,40 @@ function headerContent(currentPage) {
                </li>
        </nav>
        </div>
-    </header>
-        `;
+    </header>`;
+    // breaking links to letters to enable letter animation
+    document.querySelectorAll(".main-nav a").forEach(anchor => {
+        let newHTML = '';
+        const textContent = anchor.textContent.trim();
+        for (let c of textContent) {
+            newHTML += `
+            <span class="${anchor.className}">
+                ${c}
+            </span>
+            `;
+        }
+        anchor.innerHTML = newHTML;
+    })
+
+    // disabling visiting a new page to implement navigaiton link switch animation
+    const letterInterval = 40 // ms
+    document.querySelectorAll(".main-nav a").forEach(anchor => {
+        anchor.onclick = (event) => {
+            event.preventDefault();
+            document.querySelectorAll(".current").forEach((deadCurrent, i) =>{
+                setTimeout(()=>{
+                    deadCurrent.className = '';
+                }, i*letterInterval)
+            })
+            anchor.querySelectorAll("span").forEach((span, i) =>{
+                setTimeout(()=>{
+                    span.className = "current";
+                }, i*letterInterval)
+            })
+            
+            setTimeout(()=>{
+                location.href = anchor.href;
+            }, letterInterval*anchor.querySelectorAll("span").length)
+        }
+    })
 }
