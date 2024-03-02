@@ -86,4 +86,40 @@ function headerContent(currentPage) {
         if (sessionStorage.getItem("usingDarkMode") == 'y') darkModeSwitch.click()
     } else if (new Date().getHours() < 6 || new Date().getHours() > 18) darkModeSwitch.click()
     // dark mode when the hour is in the range 6 PM -> 6 AM
+    
+    // breaking links to letters to enable letter animation
+    document.querySelectorAll(".main-nav a").forEach(anchor => {
+        let newHTML = '';
+        const textContent = anchor.textContent.trim();
+        for (let c of textContent) {
+            newHTML += `
+            <span class="${anchor.className}">
+                ${c}
+            </span>
+            `;
+        }
+        anchor.innerHTML = newHTML;
+    })
+    // disabling visiting a new page to implement navigaiton link switch animation
+    const letterInterval = 40 // ms
+    const jumpAnimationDur = 400 // ms
+    document.querySelectorAll(".main-nav a").forEach(anchor => {
+        anchor.onclick = (event) => {
+            event.preventDefault();
+            document.querySelectorAll(".current").forEach((deadCurrent, i) =>{
+                setTimeout(()=>{
+                    deadCurrent.className = '';
+                }, i*letterInterval)
+            })
+            anchor.querySelectorAll("span").forEach((span, i) =>{
+                setTimeout(()=>{
+                    span.className = "current";
+                }, i*letterInterval)
+            })
+
+            setTimeout(()=>{
+                location.href = anchor.href;
+            }, letterInterval*anchor.querySelectorAll("span").length+jumpAnimationDur)
+        }
+    })
 }

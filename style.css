@@ -31,6 +31,72 @@
 
 }
 
+a {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+}
+
+a span {
+  text-transform: lowercase;
+  display: block;
+  margin: 0 0.04em;
+}
+
+a span:first-child {
+  margin-left: 0;
+}
+
+a span:last-child {
+  margin-right: 0;
+}
+
+.main-nav a {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-right: auto;
+}
+
+a span:first-child {
+  text-transform: uppercase;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  /* Set the underline height */
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  /* Set the underline color */
+  transition: width 0.4s ease;
+  /* Set the transition duration and easing */
+}
+
+a:hover::before {
+  width: 100%;
+}
+
+#menu span.current {
+  font-style: italic;
+  font-family: "Bodoni Moda", sans-serif;
+  animation: jump 0.4s linear;
+}
+
+@keyframes jump {
+  from {
+    transform: translateY(-0.75em);
+  }
+
+  to {
+    transform: 0;
+  }
+
+}
+
 a,
 button,
 [role="button"],
@@ -117,13 +183,6 @@ header h1 {
   text-align: left;
 }
 
-#menu .current {
-  font-style: italic;
-  font-family: "Bodoni Moda", serif;
-  font-weight: 700;
-  color: #c0c0c0
-}
-
 #menu ul {
   a {
     opacity: 0.7;
@@ -150,12 +209,23 @@ header h1 {
   padding: 0;
 }
 
+.main-nav li {
+  margin: 1.5em 0;
+}
+
+.main-nav li:first-child {
+  margin-top: 0;
+}
+
+.main-nav li:last-child {
+  margin-bottom: 0;
+}
+
 #menu .main-nav a {
   color: #000;
-  display: block;
+  display: inline-flex;
   font-size: 2.5rem;
   font-weight: 700;
-  padding: 1rem 1rem;
   text-decoration: none;
   outline: none !important;
   color: inherit !important;
@@ -279,6 +349,7 @@ header h1 {
   right: 0.5em;
   z-index: 2;
 }
+
 .toggle-menu {
   background-color: transparent;
   border: none;
@@ -359,6 +430,7 @@ header h1 {
   border: 1px solid black;
   border-radius: 50%;
 }
+
 #dark-mode-switch img {
   width: 24px;
   height: 24px;
@@ -375,7 +447,8 @@ header h1 {
 
 .dark-mode .toggle-menu:not(.active) span,
 .dark-mode .toggle-menu span:before,
-.dark-mode .toggle-menu span:after {
+.dark-mode .toggle-menu span:after,
+.dark-mode .main-nav a:before {
   background-color: lightyellow;
 }
 
@@ -383,7 +456,7 @@ header h1 {
   color: #ddd;
 }
 
-.dark-mode #menu .main-nav a,
+.dark-mode #menu .main-nav a span,
 .dark-mode #menu .main-nav li {
   color: lightyellow;
 }
@@ -392,9 +465,10 @@ header h1 {
   background: black;
 }
 
-.dark-mode #menu .current {
+.dark-mode #menu span.current {
   color: #3f3f3f;
 }
+
 .dark-mode header h1 {
   color: lightyellow;
 }
